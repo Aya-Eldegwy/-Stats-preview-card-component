@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root{
+    --first-font:"Inter", sans-serif;
+    --second-font:"Lexend Deca", sans-serif;
+}
+body{
+    font-size: 15px;
+    background-color: hsl(233, 47%, 7%);
+    font-family: var(--second-font);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+main{
+    max-width: 1120px;
+    margin: 1.5rem;
+}
+.container{
+    background-color:hsl(244, 38%, 16%) ;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    justify-content: center;
+}
+.container .container-img{
+    position: relative;
+}
+.container-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.container-img::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(277, 64%, 61%,.6)
+    ;
+}
+.desktop-img{
+    display: none;
+}
+.div-data{
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+}
+.div-data h1{
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+    padding-bottom: 1rem;
+}
+.span-h1{
+    color:hsla(277, 64%, 61%) ;
+}
+.div-data p{
+    color: hsla(0, 0%, 100%, 0.75);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+.data-info{
+    display: grid;
+    row-gap: 1rem;
+    justify-content: center;
+}
+.data-info  h2{
+    color:hsl(0, 0%, 100%);
+    font-weight: 700;
+}
+.data-info h2 span{
+    display: block;
+    color: hsla(0, 0%, 100%, 0.75);
+    font-weight: 200;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+footer {
+    padding-block: 2rem;
+    text-align: center;
+}
+footer p{
+    color:hsl(0, 0%, 100%) ;
+    font-size: 14px;
+}
+@media screen and (min-width:760px){
+    main{
+        max-width: 1120px;
+        margin-inline: auto;
+    }
+    .mobile-img{
+        display: none;
+    }
+    .container .container-img{
+        order: 100;
+        position: relative;
+    }
+    .desktop-img{
+        display: inline-flex;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin: 1rem;
+
+    }
+    .div-data{
+        padding: 12%;
+        order: 1;
+    }
+    .div-data h1{
+        padding-bottom: 2rem;
+    }
+    .div-data p{
+        line-height: 1.9;
+    }
+    .data-info{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1.5rem;
+        justify-content: center;
+        padding-top: 2rem;
+    }
+}
